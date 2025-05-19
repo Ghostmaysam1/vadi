@@ -4,7 +4,7 @@ import Menu from "./components/Menu/Menu.vue";
 
 <template>
   <nav
-    class="w-[90%] h-[60px] rounded-full px-[10px] bg-[#FCF8F8] flex justify-between items-center"
+    class="w-[90%] h-[60px] rounded-full px-[10px] border border-[#e4faff62] backdrop-blur-sm bg-[#e4faff21] fixed top-10 flex justify-between items-center"
   >
     <div class="h-full flex items-center gap-2">
       <img src="/logo.png" alt="logo" class="h-full" />
