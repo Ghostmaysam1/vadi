@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
+import NavbarFooter from './layouts/Navbar&Footer/Navbar&Footer.vue';
 </script>
 
 <template>
-  <RouterView />
+  <NavbarFooter>
+    <RouterView />
+  </NavbarFooter>
 </template>
