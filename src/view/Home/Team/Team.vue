@@ -56,17 +56,15 @@ const team: TeamMember[] = [
 const config = reactive({
     height: 500,
     itemsToShow: 3,
-    gap: 20,
+    gap: 10,
     wrapAround: true,
     mouseWheel: true
 });
 watch(width, (newValue)=>{
     if(newValue > 768) {
-        // config.height = 400
         config.itemsToShow = 3;
     } else {
         config.itemsToShow = 1;
-        // config.height = 400
     }
 }, {immediate: true})
 </script>
