@@ -1,17 +1,20 @@
 <script setup lang="ts">
-const {title} = defineProps<{
+const { title } = defineProps<{
     title: string;
-}>()
+}>();
 </script>
 
 <template>
-    <div class="h-full flex flex-col items-center gap-2">
-        <h3 class="text-xl md:text-2xl font-bold" v-text="title"></h3>
-        <span class="flex w-full gap-1 items-center justify-between">
-            <span class="h-1 w-[20%] rounded-full bg-slate-700"></span>
-            <span class="h-1 w-[50%] rounded-full bg-slate-700"></span>
-            <span class="h-1 w-[20%] rounded-full bg-slate-700"></span>
-        </span>
-        <slot></slot>
+    <div class="h-full flex flex-col items-start gap-4">
+        <div class="flex flex-col w-full">
+            <h3 class="text-2xl font-bold text-[#526168] mb-2">{{ title }}</h3>
+            <div class="flex w-full gap-1 items-center">
+                <span class="h-[3px] w-1/4 rounded-full bg-[#87675a]"></span>
+                <span class="h-[3px] w-3/4 rounded-full bg-[#87675a]/30"></span>
+            </div>
+        </div>
+        <div class="w-full">
+            <slot></slot>
+        </div>
     </div>
 </template>

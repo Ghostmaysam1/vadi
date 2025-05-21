@@ -3,37 +3,55 @@ import List from './components/List/List.vue';
 </script>
 
 <template>
-    <div class="w-full h-[480px] flex justify-center py-3" dir="rtl">
-        <div class="w-[90%] h-[420px] rounded-4xl bg-[#FCF8F8] py-2 px-1 flex justify-between">
-           <List title="منو" class="min-w-1/6">
-            <ul class="flex flex-col gap-2">
-                <li class="text-md md:text-2xl"><RouterLink to="/">خدمات</RouterLink></li>
-                <li class="text-md md:text-2xl"><RouterLink to="/">ابزار</RouterLink></li>
-                <li class="text-md md:text-2xl"><RouterLink to="/">فروشگاه</RouterLink></li>
-                <li class="text-md md:text-2xl"><RouterLink to="/">مقالات</RouterLink></li>
-                <li class="text-md md:text-2xl"><RouterLink to="/">همکاران</RouterLink></li>
-            </ul>
-           </List> 
-           <List title="راه های ارتباطی" class="min-w-1/5 max-w-2/5">
-            <ul class="flex flex-col gap-4">
-                <li class="text-md md:text-2xl">
-                    <p>آدرس:</p>
-                    سه راه 22 بهمن سه راه 22 بهمن سه راه 22 بهمن سه راه 22 بهمن سه راه 22 بهمن
-                </li>
-                <li class="text-md md:text-2xl">تلفن: 09811111111</li>
-                <li class="text-md md:text-2xl">Vadi.design :اینستاگرام</li>
-                <li class="text-md md:text-2xl">Vadi@gmail.com :ایمیل</li>
-            </ul>
-           </List>
-           <List title="مقالات" class="min-w-1/6">
-            <ul class="flex flex-col gap-2">
-                <li class="text-md md:text-2xl">مقالات برتر</li>
-                <li class="text-md md:text-2xl">___</li>
-                <li class="text-md md:text-2xl">___</li>
-                <li class="text-md md:text-2xl">___</li>
-                <li class="text-md md:text-2xl">___</li>
-            </ul>
-           </List>
+    <footer dir="rtl" class="w-full bg-gradient-to-b from-[#f8f5f2] to-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="w-full max-w-6xl mx-auto bg-white rounded-3xl shadow-sm p-8 border border-[#E8D8D8]">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <List title="منو" class="px-4 py-2">
+                        <ul class="space-y-4">
+                            <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl"><RouterLink to="/">خدمات</RouterLink></li>
+                            <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl"><RouterLink to="/">ابزار</RouterLink></li>
+                            <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl"><RouterLink to="/">فروشگاه</RouterLink></li>
+                            <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl"><RouterLink to="/">مقالات</RouterLink></li>
+                            <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl"><RouterLink to="/">همکاران</RouterLink></li>
+                        </ul>
+                    </List>
+                    
+                    <List title="راه‌های ارتباطی" class="px-4 py-2">
+                        <ul class="space-y-4">
+                            <li class="flex flex-col md:flex-row gap-1 md:gap-2">
+                                <span class="text-[#87675a] font-medium text-lg min-w-[100px] md:min-w-[120px]">آدرس:</span>
+                                <span class="text-gray-600 text-lg">سه راه 22 بهمن،برج فناوری، طبقه طبقه اول</span>
+                            </li>
+                            <li class="flex flex-col md:flex-row gap-1 md:gap-2">
+                                <span class="text-[#87675a] font-medium text-lg min-w-[100px] md:min-w-[120px]">تلفن:</span>
+                                <span class="text-gray-600 text-lg">09811111111</span>
+                            </li>
+                            <li class="flex flex-col md:flex-row gap-1 md:gap-2">
+                                <span class="text-[#87675a] font-medium text-lg min-w-[100px] md:min-w-[120px]">اینستاگرام:</span>
+                                <span class="text-gray-600 text-lg">Vadi.design</span>
+                            </li>
+                            <li class="flex flex-col md:flex-row gap-1 md:gap-2">
+                                <span class="text-[#87675a] font-medium text-lg min-w-[100px] md:min-w-[120px]">ایمیل:</span>
+                                <span class="text-gray-600 text-lg">Vadi@gmail.com</span>
+                            </li>
+                        </ul>
+                    </List>
+                    
+                    <List title="مقالات" class="px-4 py-2">
+                        <ul class="space-y-4">
+                            <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl">مقالات برتر</li>
+                            <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl">تازه‌های طراحی</li>
+                            <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl">راهنمای خرید</li>
+                            <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl">سبک‌های دکوراسیون</li>
+                        </ul>
+                    </List>
+                </div>
+                
+                <div class="mt-12 pt-6 border-t border-[#E8D8D8] text-center text-gray-500">
+                    <p>© 2023 وادی - تمام حقوق محفوظ است</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </footer>
 </template>
