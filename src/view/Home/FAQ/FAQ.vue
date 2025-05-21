@@ -18,12 +18,25 @@ const FAQ: {question: string, answer: string}[] = [
 </script>
 
 <template>
-    <div class="w-full pt-5 flex flex-col items-center">
-        <h3 class="w-fit text-center px-10 border border-black/10 shadow-lg py-2 rounded-full text-white bg-linear-to-br/oklab from-[#526168]/60 to-[#87675a]/60 text-4xl font-[600]">سوالات متداول</h3>
-        <div class="w-full py-8 px-5 flex flex-col gap-2">
-            <template v-for="faq in FAQ" :key="faq.question">
-                <Accordion :question="faq.question" :answer="faq.answer" />
-            </template>
+    <section class="w-full py-16 bg-gradient-to-b from-[#f8f5f2] to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#526168] to-[#87675a] px-8 py-3">
+                    سوالات متداول
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                    پاسخ به پرسش‌های پرتکرار شما
+                </p>
+            </div>
+
+            <div class="max-w-[80%] mx-auto space-y-4">
+                <Accordion 
+                    v-for="(faq, index) in FAQ" 
+                    :key="index"
+                    :question="faq.question" 
+                    :answer="faq.answer"
+                />
+            </div>
         </div>
-    </div>
+    </section>
 </template>
