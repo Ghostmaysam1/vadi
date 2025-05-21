@@ -49,7 +49,7 @@ import List from './components/List/List.vue';
                 </div>
                 
                 <div class="mt-12 pt-6 border-t border-[#E8D8D8] text-center text-gray-500">
-                    <p>© 2023 وادی - تمام حقوق محفوظ است</p>
+                    <p>© 2025 وادی - تمام حقوق محفوظ است</p>
                 </div>
             </div>
         </div>

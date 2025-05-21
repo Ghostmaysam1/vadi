@@ -38,7 +38,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="relative" ref="menuRef">
+  <div class="relative" dir="rtl" ref="menuRef">
     <button 
       @click.stop="toggleMenu"
       class="p-2 focus:outline-none"

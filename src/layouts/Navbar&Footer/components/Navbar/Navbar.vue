@@ -16,7 +16,7 @@ const navItems = [
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between h-20">
         <RouterLink to="/" class="flex items-center gap-3 group">
-          <img src="/logo.png" alt="logo" class="h-12" />
+          <img src="/vadi logo 1.png" alt="logo" class="h-12" />
           <h1 class="font-bold text-3xl text-[#4D5057]">VADI</h1>
         </RouterLink>
 
