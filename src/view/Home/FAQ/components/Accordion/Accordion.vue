@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const props = defineProps<{
+const {question, answer} = defineProps<{
   question: string;
   answer: string;
 }>();
