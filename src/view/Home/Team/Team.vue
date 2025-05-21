@@ -1,67 +1,68 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { reactive, watch } from 'vue';
 import 'vue3-carousel/carousel.css';
 import { Carousel, Slide, Pagination } from 'vue3-carousel';
 import { useWindowSize } from '../../../utils/shared';
-import { watch } from 'vue';
 import Member from './Member/Member.vue';
 
-const {width} = useWindowSize();
-
 interface TeamMember {
-    name: string,
-    title: string,
-    img: string
+  name: string;
+  title: string;
+  img: string;
+  expertise?: string[];
 }
+
+const { width } = useWindowSize();
 
 const team: TeamMember[] = [
     {
         name: 'میثم آصفی',
         title: 'Front-End',
-        img: `/images/xa.png`
+        img: `/images/xa.png`,
+        expertise: ['Vue', 'React', 'UI/UX']
     },
     {
-        name: 'محسن',
-        title: 'Back-End',
-        img: `/images/xa.png`
-    },
-    {
-        name: 'امیر اسدی',
-        title: 'Dev-ops',
-        img: `/images/xa.png`
-    },
-    {
-        name: 'عرفان احمدی',
-        title: 'Digital-Marketing',
-        img: `/images/xa.png`
-    },
-    {
-        name: ' محمد پارسا درکه',
-        title: 'Mobile',
-        img: `/images/xa.png`
-    },
-    {
-        name: 'آرزو محمدی',
-        title: 'Designer',
-        img: `/images/xb.png`
-    },
-    {
-        name: 'جان ویک',
+        name: 'میثم آصفی',
         title: 'Front-End',
-        img: `/images/xa.png`
+        img: `/images/xa.png`,
+        expertise: ['Vue', 'React', 'UI/UX']
+    },
+    {
+        name: 'میثم آصفی',
+        title: 'Front-End',
+        img: `/images/xa.png`,
+        expertise: ['Vue', 'React', 'UI/UX']
+    },
+    {
+        name: 'میثم آصفی',
+        title: 'Front-End',
+        img: `/images/xa.png`,
+        expertise: ['Vue', 'React', 'UI/UX']
+    },
+    {
+        name: 'میثم آصفی',
+        title: 'Front-End',
+        img: `/images/xa.png`,
+        expertise: ['Vue', 'React', 'UI/UX']
     },
 ]
 
-
 const config = reactive({
-    height: 500,
-    itemsToShow: 3,
-    gap: 10,
-    wrapAround: true,
-    mouseWheel: true
+  height: 500,
+  itemsToShow: 3,
+  gap: 32,
+  wrapAround: true,
+  mouseWheel: true,
+  transition: 500,
+  breakpoints: {
+    768: { itemsToShow: 1, gap: 16 },
+    1024: { itemsToShow: 2 },
+    1280: { itemsToShow: 3 }
+  }
 });
-watch(width, (newValue)=>{
-    if(newValue > 768) {
+
+watch(width, (w)=>{
+    if(w > 768) {
         config.itemsToShow = 3;
     } else {
         config.itemsToShow = 1;
@@ -70,34 +71,48 @@ watch(width, (newValue)=>{
 </script>
 
 <template>
-    <div class="w-full pt-5 my-10 flex flex-col items-center">
-        <h3 class="w-fit text-center px-10 border border-black/10 shadow-lg py-2 rounded-full text-white bg-linear-to-br/oklab from-[#526168]/60 to-[#87675a]/60 text-4xl font-[600]">همکاران</h3>
-        <div class="w-full md:h-[500px] flex gap-2 flex-col md:flex-row justify-evenly items-center px-5 mt-6">
-            <Carousel v-bind="config" class="w-full md:w-[80%]">
-                <Slide v-for="slide in team" :key="slide.name">
-                    <Member :slide="slide" />
-                </Slide>
+  <section class="w-full py-16 bg-gradient-to-b from-[#f8f5f2] to-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="inline-block text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#526168] to-[#87675a] px-8 py-3">
+          تیم حرفه‌ای ما
+        </h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          متخصصان با تجربه در حوزه‌های مختلف فناوری
+        </p>
+      </div>
 
-                <template #addons>
-                    <Pagination class="top-[105%]" />
-                </template>
-            </Carousel>
-        </div>
+      <Carousel 
+        v-bind="config" 
+        class="w-full max-w-6xl mx-auto"
+      >
+        <Slide v-for="member in team" :key="member.name">
+          <Member :member="member" />
+        </Slide>
+
+        <template #addons>
+          <Pagination class="top-[100%]" />
+        </template>
+      </Carousel>
     </div>
+  </section>
 </template>
 
 <style>
-:root {
-    --vc-pgn-gap: 10px
-}
 .carousel__pagination-button {
-  height: 5px;
-  width: 5px;
-  border-radius: 5px;
-  background-color: black;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  transition: all 0.3s;
 }
 
 .carousel__pagination-button--active {
-  background-color: red;
+  background-color: #87675a;
+  transform: scale(1.2);
+}
+
+.carousel__pagination {
+  gap: 8px;
 }
 </style>
