@@ -2,6 +2,7 @@
 import Header from './Home/Header/Header.vue';
 import Services from './Home/Services/Services.vue';
 import Team from './Home/Team/Team.vue';
+import FAQ from './Home/FAQ/FAQ.vue';
 </script>
 
 <template>
@@ -9,5 +10,7 @@ import Team from './Home/Team/Team.vue';
         <Header />
         <Services />
         <Team />
+        <FAQ />
+        <br><br><br>
     </div>
 </template>
