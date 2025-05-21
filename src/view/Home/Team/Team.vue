@@ -19,31 +19,31 @@ const team: TeamMember[] = [
         name: 'میثم آصفی',
         title: 'Front-End',
         img: `/images/xa.png`,
-        expertise: ['Vue', 'React', 'UI/UX']
+        expertise: ['Vue', 'React', 'TypeScript', '...']
     },
     {
         name: 'میثم آصفی',
         title: 'Front-End',
         img: `/images/xa.png`,
-        expertise: ['Vue', 'React', 'UI/UX']
+        expertise: ['Vue', 'React', 'TypeScript', '...']
     },
     {
         name: 'میثم آصفی',
         title: 'Front-End',
         img: `/images/xa.png`,
-        expertise: ['Vue', 'React', 'UI/UX']
+        expertise: ['Vue', 'React', 'TypeScript', '...']
     },
     {
         name: 'میثم آصفی',
         title: 'Front-End',
         img: `/images/xa.png`,
-        expertise: ['Vue', 'React', 'UI/UX']
+        expertise: ['Vue', 'React', 'TypeScript', '...']
     },
     {
         name: 'میثم آصفی',
         title: 'Front-End',
         img: `/images/xa.png`,
-        expertise: ['Vue', 'React', 'UI/UX']
+        expertise: ['Vue', 'React', 'TypeScript', '...']
     },
 ]
 

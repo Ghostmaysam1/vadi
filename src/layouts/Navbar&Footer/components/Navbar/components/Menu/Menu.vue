@@ -1,85 +1,85 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, type Ref } from "vue";
-import { RouterLink } from "vue-router";
+import { ref, onMounted, onUnmounted } from 'vue';
+import { RouterLink } from 'vue-router';
 
-const isMenuOpen: Ref<boolean> = ref(false);
-const listEl: Ref<HTMLUListElement | null> = ref(null);
-const menuBtn: Ref<HTMLImageElement | null> = ref(null);
+const isMenuOpen = ref(false);
+const menuRef = ref<null | HTMLElement>(null);
+
+const menuItems = [
+  { title: 'خدمات', icon: '/icons/commitIcon.svg', path: '/services' },
+  { title: 'ابزارها', icon: '/icons/toolsIcon.svg', path: '/tools' },
+  { title: 'فروشگاه', icon: '/icons/shopIcon.svg', path: '/shop' },
+  { title: 'مقالات', icon: '/icons/booksIcon.svg', path: '/blog' },
+  { title: 'ارتباط با ما', icon: '/icons/contactusIcon.svg', path: '/contact' },
+  { title: 'همکاران', icon: '/icons/teamIcon.svg', path: '/team' }
+];
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
+};
+
+const handleClickOutside = (event: MouseEvent) => {
+  if (menuRef.value && !menuRef.value.contains(<any>event.target)) {
+    closeMenu();
+  }
+};
 
 onMounted(() => {
-  document.addEventListener("click", documentListener);
-  console.log("add");
+  document.addEventListener('click', handleClickOutside);
 });
 
 onUnmounted(() => {
-  document.removeEventListener("click", documentListener);
-  console.log("remove")
+  document.removeEventListener('click', handleClickOutside);
 });
-
-const documentListener = (e: MouseEvent) => {
-  if (listEl.value && menuBtn.value && e.target != listEl.value && e.target != menuBtn.value) {
-    isMenuOpen.value = false;
-  }
-};
 </script>
 
 <template>
-  <div class="md:hidden relative">
-    <img
-      ref="menuBtn"
-      src="/icons/menuIcon.svg"
-      alt="menu"
-      @click="isMenuOpen = !isMenuOpen"
-      class="h-[50px]"
-    />
-
-    <ul
-      ref="listEl"
-      v-if="isMenuOpen"
-      class="w-[200px] h-auto py-3 px-2 flex flex-col items-end bg-white md:hidden gap-6 text-lg absolute top-13 right-[10px]"
+  <div class="relative" ref="menuRef">
+    <button 
+      @click.stop="toggleMenu"
+      class="p-2 focus:outline-none"
+      aria-label="Menu"
     >
-      <li>
-        <RouterLink to="/" class="flex">
-          خدمات
-          <img src="/icons/commitIcon.svg" alt="" />
-        </RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/" class="flex">
-          ابزار ها
-          <img src="/icons/toolsIcon.svg" alt="" />
-        </RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/" class="flex">
-          فروشگاه
-          <img src="/icons/shopIcon.svg" alt="" />
-        </RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/" class="flex">
-          مقالات
-          <img src="/icons/booksIcon.svg" alt="" />
-        </RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/" class="flex">
-          ارتباط با ما
-          <img src="/icons/contactusIcon.svg" alt="" />
-        </RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/" class="flex">
-          همکاران
-          <img src="/icons/teamIcon.svg" alt="" />
-        </RouterLink>
-      </li>
-    </ul>
+      <img 
+        src="/icons/menuIcon.svg" 
+        alt="menu" 
+        class="h-10 w-10"
+      />
+    </button>
+
+    <transition
+      enter-active-class="transition duration-200 ease-out"
+      enter-from-class="transform opacity-0 -translate-y-2"
+      enter-to-class="transform opacity-100 translate-y-0"
+      leave-active-class="transition duration-150 ease-in"
+      leave-from-class="transform opacity-100 translate-y-0"
+      leave-to-class="transform opacity-0 -translate-y-2"
+    >
+      <div
+        v-if="isMenuOpen"
+        class="absolute right-0 top-full mt-2 w-64 bg-white rounded-lg shadow-xl z-50 overflow-hidden"
+      >
+        <ul class="py-2">
+          <li 
+            v-for="(item, index) in menuItems" 
+            :key="index"
+            class="hover:bg-gray-50 transition-colors"
+          >
+            <RouterLink
+              :to="item.path"
+              class="flex items-center gap-3 px-4 py-3 text-[#4D5057]"
+              @click="closeMenu"
+            >
+              <img :src="item.icon" :alt="item.title" class="h-5 w-5" />
+              <span>{{ item.title }}</span>
+            </RouterLink>
+          </li>
+        </ul>
+      </div>
+    </transition>
   </div>
 </template>
-
-<style scoped>
-ul li a {
-  gap: 10px;
-}
-</style>
