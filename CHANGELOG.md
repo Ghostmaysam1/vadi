@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Ghostmaysam1/vadi/compare/v1.0.0...v1.1.0) (2025-05-21)
+
+
+### Features
+
+* auth pages added ([#14](https://github.com/Ghostmaysam1/vadi/issues/14)) ([43bdc42](https://github.com/Ghostmaysam1/vadi/commit/43bdc42aeda84e0fd6031e76177c0171d1e7ce65))
+
 # 1.0.0 (2025-05-21)
 
 
