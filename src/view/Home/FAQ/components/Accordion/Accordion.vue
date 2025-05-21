@@ -26,7 +26,7 @@ const isOpen = ref(false);
 </script>
 
 <template>
-    <div :style="{background: isOpen ? '#D5D5D5': '#F3F3F3'}" class="accordion  flex w-full flex-col px-10 py-10 rounded-4xl border border-black/50" dir="rtl">
+    <div :style="{background: isOpen ? '#D5D5D5': '#F3F3F3'}" class="accordion  flex w-full flex-col px-10 py-10 rounded-xl border border-black/50" dir="rtl">
         <div @click="isOpen = !isOpen" class="flex justify-between items-center cursor-pointer">
             <p class="text-xl flex items-center gap-4 font-medium"> {{ question }}</p>
         </div>
