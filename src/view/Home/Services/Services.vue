@@ -3,12 +3,34 @@ import ServiceBox from './components/ServiceBox/ServiceBox.vue';
 </script>
 
 <template>
-    <div class="w-full pt-5 flex flex-col items-center">
-        <h3 class="w-fit text-center px-10 border border-black/10 shadow-lg py-2 rounded-full text-white bg-linear-to-br/oklab from-[#526168]/60 to-[#87675a]/60 text-4xl font-[600]">خدمات</h3>
-        <div class="w-full md:h-[500px] flex gap-2 flex-col md:flex-row justify-evenly items-center px-5 mt-6">
-            <ServiceBox title="خدمات اجرا" src="/images/xa.png" />
-            <ServiceBox title="مشاوره حضوری" src="/images/xb.png" />
-            <ServiceBox title="VIP خدمات" src="/images/xc.png" />
+    <section class="w-full py-12 bg-gradient-to-b from-[#f8f5f2] to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="inline-block text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#526168] to-[#87675a] px-8 py-3">
+                    خدمات تخصصی ما
+                </h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                    راهکارهای حرفه‌ای برای نیازهای منحصر به فرد شما
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
+                <ServiceBox 
+                    title="خدمات اجرا" 
+                    src="/images/xa.png"
+                    icon="🏗️"
+                />
+                <ServiceBox 
+                    title="مشاوره حضوری" 
+                    src="/images/xb.png"
+                    icon="💼"
+                />
+                <ServiceBox 
+                    title="خدمات VIP" 
+                    src="/images/xc.png"
+                    icon="✨"
+                />
+            </div>
         </div>
-    </div>
+    </section>
 </template>

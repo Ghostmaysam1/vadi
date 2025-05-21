@@ -1,40 +1,51 @@
 <script setup lang="ts">
 import Menu from "./components/Menu/Menu.vue";
+
+const navItems = [
+  { title: 'خدمات', path: '/services' },
+  { title: 'ابزارها', path: '/tools' },
+  { title: 'فروشگاه', path: '/shop' },
+  { title: 'مقالات', path: '/blog' },
+  { title: 'ارتباط با ما', path: '/contact' },
+  { title: 'همکاران', path: '/team' }
+];
 </script>
 
 <template>
-  <nav
-    class="w-[90%] h-[60px] rounded-full px-[10px] border border-[#e4faff62] backdrop-blur-sm bg-[#e4faff21] fixed z-50 top-10 flex justify-between items-center"
-  >
-    <div class="h-full flex items-center gap-2">
-      <img src="/logo.png" alt="logo" class="h-full" />
-      <h1 class="font-segeoUI text-3xl text-[#4D5057]">VADI</h1>
-    </div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-blue-100/40 backdrop-blur-sm shadow-sm">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-20">
+        <RouterLink to="/" class="flex items-center gap-3 group">
+          <img src="/vadi logo 1.png" alt="logo" class="h-12" />
+          <h1 class="font-bold text-3xl text-[#4D5057]">VADI</h1>
+        </RouterLink>
 
-    <div class="h-full flex flex-row-reverse items-center gap-3">
-      <Menu />
-      <img src="/icons/userIcon.svg" alt="user" class="h-[50px]" />
-      <ul class="hidden md:flex flex-row-reverse gap-2">
-        <!-- desktop View -->
-        <li>
-          <RouterLink to="/"> خدمات </RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/"> ابزار ها </RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/"> فروشگاه </RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/"> مقالات </RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/"> ارتباط با ما </RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/"> همکاران </RouterLink>
-        </li>
-      </ul>
+        <div class="hidden md:flex items-center gap-8">
+          <ul class="flex gap-6">
+            <li v-for="(item, index) in navItems" :key="index">
+              <RouterLink 
+                :to="item.path" 
+                class="text-lg font-medium text-[#4D5057] hover:text-[#87675a] transition-colors duration-300"
+              >
+                {{ item.title }}
+              </RouterLink>
+            </li>
+          </ul>
+          
+          <div class="flex items-center gap-4">
+            <RouterLink to="/account">
+              <img src="/icons/userIcon.svg" alt="user" class="h-10 w-10" />
+            </RouterLink>
+          </div>
+        </div>
+
+        <div class="md:hidden flex items-center gap-4">
+          <RouterLink to="/account">
+            <img src="/icons/userIcon.svg" alt="user" class="h-10 w-10" />
+          </RouterLink>
+          <Menu />
+        </div>
+      </div>
     </div>
   </nav>
 </template>
