@@ -13,7 +13,7 @@ import List from './components/List/List.vue';
                             <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl"><RouterLink to="/">ابزار</RouterLink></li>
                             <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl"><RouterLink to="/">فروشگاه</RouterLink></li>
                             <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl"><RouterLink to="/">مقالات</RouterLink></li>
-                            <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl"><RouterLink to="/">همکاران</RouterLink></li>
+                            <li class="text-gray-700 hover:text-[#87675a] transition-colors duration-300 text-lg md:text-xl"><RouterLink to="/team">همکاران</RouterLink></li>
                         </ul>
                     </List>
                     
