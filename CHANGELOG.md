@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/Ghostmaysam1/vadi/compare/v1.1.0...v1.2.0) (2025-05-22)
+
+
+### Bug Fixes
+
+* fix links issue ([#17](https://github.com/Ghostmaysam1/vadi/issues/17)) ([24776b0](https://github.com/Ghostmaysam1/vadi/commit/24776b006b1f423c64abe09b0dd4fa3b33193df9))
+
+
+### Features
+
+* add Resume page ([#16](https://github.com/Ghostmaysam1/vadi/issues/16)) ([de3986a](https://github.com/Ghostmaysam1/vadi/commit/de3986a4d1bdb6868823fc1014129589f9a2534d))
+
 # [1.1.0](https://github.com/Ghostmaysam1/vadi/compare/v1.0.0...v1.1.0) (2025-05-21)
 
 
