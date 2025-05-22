@@ -10,7 +10,7 @@ defineProps<{
   <div class="w-full relative z-30">
     <div class="flex justify-center gap-1 mb-[-2px]">
       <button
-        class="px-8 py-3  bg-gradient-to-r from-[#526168] to-[#87675a] rounded-t-2xl border-t-2 border-x-2 border-[#E8D8D8] text-white text-xl font-medium transition-all duration-300 hover:bg-[#FFB45C]">
+        class="px-8 py-3 bg-white rounded-t-2xl border-t-2 border-x-2 border-[#E8D8D8] text-black text-xl font-medium transition-all duration-300 hover:bg-[#FFB45C]">
         رزومه
       </button>
     </div>
