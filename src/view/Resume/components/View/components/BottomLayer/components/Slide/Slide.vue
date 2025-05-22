@@ -1,5 +1,14 @@
+<script setup lang="ts">
+defineProps({
+  title: String,
+  description: String,
+  tags: Array
+});
+</script>
+
 <template>
   <div
+    dir="rtl"
     class="bg-white rounded-xl overflow-hidden border-2 border-[#E8D8D8] hover:shadow-md transition-all duration-300 h-full flex flex-col">
     <div class="h-40 bg-gradient-to-r from-[#FFEEDA] to-[#FFC27A] flex items-center justify-center">
       <span class="text-[#87675a] font-medium">پیش‌نمایش پروژه</span>
@@ -17,11 +26,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-defineProps({
-  title: String,
-  description: String,
-  tags: Array
-});
-</script>
