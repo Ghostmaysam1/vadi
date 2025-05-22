@@ -13,7 +13,7 @@ const useStore = defineStore("store", {
                 id: "345345-345345",
                 name: "میثم آصفی",
                 position: "توسعه دهنده Front-End",
-                image: "/images/xc.png",
+                image: "/images/men.png",
                 skills: ["Vue.js", "React", "Typescript"],
             },
             {
@@ -50,6 +50,12 @@ const useStore = defineStore("store", {
                 position: "توسعه دهنده Full-Stack",
                 image: "/images/xb.png",
                 skills: ["Nodejs", "React", "UI/UX"],
+            },
+            {
+                id: "34534-3364534",
+                name: "پوریا بابایی",
+                position: "مشاور اقتصادی و ناظر اجرا",
+                image: "/team/babaee.png"
             }
         ]
     })
