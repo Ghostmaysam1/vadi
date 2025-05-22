@@ -22,6 +22,9 @@ const config = reactive({
 
 watch(width, (w)=>{
     if(w > 768) {
+        if(w > 1024) {
+          config.height = 550;
+        }
         config.itemsToShow = 3;
     } else {
         config.itemsToShow = 1;
@@ -43,10 +46,10 @@ watch(width, (w)=>{
 
       <Carousel 
         v-bind="config" 
-        class="w-full max-w-6xl mx-auto"
+        class="w-full max-w-6xl lg:max-w-8xl mx-auto"
       >
         <Slide v-for="member in team" :key="member.name">
-          <Member :member="member" />
+          <Member class="lg:w-full" :member="member" />
         </Slide>
 
         <template #addons>
