@@ -24,6 +24,11 @@ const router = createRouter({
             name: 'signup',
             path: '/signup',
             component: AuthView
+        },
+        {
+            name: 'team',
+            path: '/team',
+            component: ()=>import('../view/TeamView.vue')
         }
     ]
 })

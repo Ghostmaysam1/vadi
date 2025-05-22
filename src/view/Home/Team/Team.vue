@@ -3,49 +3,13 @@ import { reactive, watch } from 'vue';
 import 'vue3-carousel/carousel.css';
 import { Carousel, Slide, Pagination } from 'vue3-carousel';
 import { useWindowSize } from '../../../utils/shared';
-import Member from './Member/Member.vue';
-
-interface TeamMember {
-  name: string;
-  title: string;
-  img: string;
-  expertise?: string[];
-}
+import Member from '../../../components/Member.vue';
+import useStore from '../../../store';
+const store = useStore();
 
 const { width } = useWindowSize();
 
-const team: TeamMember[] = [
-    {
-        name: 'میثم آصفی',
-        title: 'Front-End',
-        img: `/images/xa.png`,
-        expertise: ['Vue', 'React', 'TypeScript', '...']
-    },
-    {
-        name: 'میثم آصفی',
-        title: 'Front-End',
-        img: `/images/xa.png`,
-        expertise: ['Vue', 'React', 'TypeScript', '...']
-    },
-    {
-        name: 'میثم آصفی',
-        title: 'Front-End',
-        img: `/images/xa.png`,
-        expertise: ['Vue', 'React', 'TypeScript', '...']
-    },
-    {
-        name: 'میثم آصفی',
-        title: 'Front-End',
-        img: `/images/xa.png`,
-        expertise: ['Vue', 'React', 'TypeScript', '...']
-    },
-    {
-        name: 'میثم آصفی',
-        title: 'Front-End',
-        img: `/images/xa.png`,
-        expertise: ['Vue', 'React', 'TypeScript', '...']
-    },
-]
+const team = store.team;
 
 const config = reactive({
   height: 500,
@@ -53,12 +17,7 @@ const config = reactive({
   gap: 32,
   wrapAround: true,
   mouseWheel: true,
-  transition: 500,
-  breakpoints: {
-    768: { itemsToShow: 1, gap: 16 },
-    1024: { itemsToShow: 2 },
-    1280: { itemsToShow: 3 }
-  }
+  transition: 500
 });
 
 watch(width, (w)=>{
