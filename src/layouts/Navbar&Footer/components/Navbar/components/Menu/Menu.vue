@@ -6,11 +6,11 @@ const isMenuOpen = ref(false);
 const menuRef = ref<null | HTMLElement>(null);
 
 const menuItems = [
-  { title: 'خدمات', icon: '/icons/commitIcon.svg', path: '/services' },
-  { title: 'ابزارها', icon: '/icons/toolsIcon.svg', path: '/tools' },
-  { title: 'فروشگاه', icon: '/icons/shopIcon.svg', path: '/shop' },
-  { title: 'مقالات', icon: '/icons/booksIcon.svg', path: '/blog' },
-  { title: 'ارتباط با ما', icon: '/icons/contactusIcon.svg', path: '/contact' },
+  { title: 'خدمات', icon: '/icons/commitIcon.svg', path: '/' },
+  { title: 'ابزارها', icon: '/icons/toolsIcon.svg', path: '/' },
+  { title: 'فروشگاه', icon: '/icons/shopIcon.svg', path: '/' },
+  { title: 'مقالات', icon: '/icons/booksIcon.svg', path: '/' },
+  { title: 'ارتباط با ما', icon: '/icons/contactusIcon.svg', path: '/' },
   { title: 'همکاران', icon: '/icons/teamIcon.svg', path: '/team' }
 ];
 
