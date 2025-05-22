@@ -1,3 +1,11 @@
+<script setup lang="ts">
+// import type { Member } from '../../../../../../types';
+
+// defineProps<{
+//   member: Member;
+// }>()
+</script>
+
 <template>
   <div class="w-full relative z-20 mt-[-20px]">
     <div class="w-full min-h-[200px] bg-white rounded-b-2xl border-2 border-[#E8D8D8] p-6 shadow-lg">
