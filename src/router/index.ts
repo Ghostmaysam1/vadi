@@ -29,6 +29,11 @@ const router = createRouter({
             name: 'team',
             path: '/team',
             component: ()=>import('../view/TeamView.vue')
+        },
+        {
+            name: 'resume',
+            path: '/team/:id',
+            component: ()=>import('../view/ResumeView.vue')
         }
     ]
 })

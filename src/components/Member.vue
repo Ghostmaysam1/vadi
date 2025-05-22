@@ -4,7 +4,7 @@ defineProps<{
     id: string;
     image: string;
     name: string;
-    title: string;
+    position: string;
     skills?: string[];
   }
 }>();
@@ -22,7 +22,7 @@ defineProps<{
 
       <div class="p-6 relative text-right z-30">
         <h3 class="text-xl font-bold text-gray-800 mb-1">{{ member.name }}</h3>
-        <p class="text-[#87675a] font-medium mb-4">{{ member.title }}</p>
+        <p class="text-[#87675a] font-medium mb-4">{{ member.position }}</p>
 
         <div v-if="member.skills" class="flex w-full flex-wrap gap-1 mb-5">
           <span v-for="(skill, index) in member.skills.slice(0, 3)" :key="index"
