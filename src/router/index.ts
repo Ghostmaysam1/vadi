@@ -35,7 +35,10 @@ const router = createRouter({
             path: '/team/:id',
             component: ()=>import('../view/ResumeView.vue')
         }
-    ]
+    ],
+    scrollBehavior: ()=>{
+        return {left: 0, top: 0}
+    }
 })
 
 export default router;
