@@ -1,17 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import type { Member } from '../../../../../../types';
 
 defineProps<{
   member: Member
 }>()
 </script>
-
-<style scoped>
-.scroll-hidden::-webkit-scrollbar {
-  display: none;
-}
-</style>
 
 <template>
   <div class="w-full relative z-30">
@@ -31,13 +24,13 @@ defineProps<{
             <h2 class="text-2xl font-bold text-[#526168]" v-text="member.name"></h2>
           </div>
 
-          <div class="bg-[#FFEEDA] rounded-2xl border-2 border-[#E8D8D8] p-4 h-full">
+          <div dir="rtl" class="bg-[#FFEEDA] rounded-2xl border-2 border-[#E8D8D8] p-4 h-full">
             <div class="flex justify-between items-center mb-3">
               <h3 class="text-lg font-semibold text-[#87675a]">مهارت‌های تخصصی</h3>
-              <p class="text-sm text-gray-600" v-text="member.position"></p>
+              <p class="text-md font-bold text-gray-600" v-text="member.position"></p>
             </div>
 
-            <div class="flex flex-wrap gap-2 overflow-x-auto scroll-hidden">
+            <div dir="ltr" class="flex flex-wrap gap-2 overflow-x-auto scroll-hidden">
               <span v-for="(skill, index) in member.skills" :key="index"
                 class="px-4 py-2 rounded-full bg-white border border-[#E8D8D8] text-sm font-medium shadow-sm hover:bg-[#FFEEDA] transition-colors">
                 {{ skill }}
@@ -57,3 +50,9 @@ defineProps<{
     </div>
   </div>
 </template>
+
+<style scoped>
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+</style>
