@@ -1,44 +1,13 @@
 <script setup lang="ts">
-import Member from './components/Member.vue';
+import {ref} from 'vue';
 
-const team = [
-    {
-        name: "میثم آصفی",
-        position: "توسعه دهنده فرانت‌اند",
-        image: "/images/xc.png",
-        skills: ["Vue.js", "React", "UI/UX"],
-    },
-    {
-        name: "میثم آصفی",
-        position: "توسعه دهنده فرانت‌اند",
-        image: "/images/xa.png",
-        skills: ["Vue.js", "React", "UI/UX"],
-    },
-    {
-        name: "میثم آصفی",
-        position: "توسعه دهنده فرانت‌اند",
-        image: "/images/xb.png",
-        skills: ["Vue.js", "React", "UI/UX"],
-    },
-    {
-        name: "میثم آصفی",
-        position: "توسعه دهنده فرانت‌اند",
-        image: "/images/xc.png",
-        skills: ["Vue.js", "React", "UI/UX"],
-    },
-    {
-        name: "میثم آصفی",
-        position: "توسعه دهنده فرانت‌اند",
-        image: "/images/xa.png",
-        skills: ["Vue.js", "React", "UI/UX"],
-    },
-    {
-        name: "میثم آصفی",
-        position: "توسعه دهنده فرانت‌اند",
-        image: "/images/xb.png",
-        skills: ["Vue.js", "React", "UI/UX"],
-    },
-];
+import Member from '../../components/Member.vue';
+import useStore from '../../store';;
+
+const store = useStore();
+
+const team = ref(store.team);
+
 </script>
 
 <template>
@@ -56,7 +25,7 @@ const team = [
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <template v-for="member in team">
-                    <Member :name="member.name" :position="member.position" :image="member.image" :skills="member.skills" />
+                    <Member :member="member" />
                 </template>
             </div>
         </div>
