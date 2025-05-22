@@ -14,8 +14,9 @@ defineProps<{
     <div class="w-full h-full min-h-[250px] bg-white bg-cover rounded-2xl">
       <div class="flex flex-col md:flex-row-reverse gap-6 h-full items-center">
 
-        <div class="flex-1 h-min flex flex-col gap-4">
-          <div class="bg-[#FFEEDA]/10 w-full p-4 gap-3 rounded-2xl flex flex-col justify-center items-end">
+        <div class="h-min flex flex-row-reverse gap-10 pl-32">
+          <div>
+            <div class="bg-[#FFEEDA]/10 w-full p-4 gap-3 rounded-2xl flex flex-col justify-center items-end">
             <h2 class="text-4xl font-bold text-[#526168]">سلام من {{ member.name }} هستم</h2>
             <div>
               <div class="flex items-center mb-3 flex-row-reverse gap-2">
@@ -28,7 +29,7 @@ defineProps<{
           <div dir="rtl" class="bg-[#FFEEDA]/10 gap-4 flex flex-col rounded-2xl p-4 h-full">
 
 
-            <p class="w-2/3 font-normal text-2xl text-justify">
+            <p class="w-[80%] font-normal text-2xl text-justify">
               می توانم با توجه به تجربه و شناخت بازار
               اقتصادی ترین مسیر را جهت اجرای طرحهای دکوراسیون داخلی
               مدنظر شما پیشنهاد دهم و هم در اجرایش نظارت داشته باشم.
@@ -37,15 +38,18 @@ defineProps<{
 
             </p>
           </div>
-        </div>
+          </div>
 
-        <div class="w-1/3 h-min relative left-20 bottom-5 flex justify-center items-center">
-          <div class="relative w-full h-64 flex justify-end md:h-full overflow-hidden">
-            <img :src="member.image" :alt="member.name"
-              class="w-full object-cover transition-transform duration-500 hover:scale-105">
-            <div class="absolute inset-0"></div>
+          <div class="scale-[105%] relative bottom-10">
+              <img :src="member.image" :alt="member.name"
+                class="h-full object-cover transition-transform duration-500 hover:scale-105">
           </div>
         </div>
+
+
+
+
+
       </div>
     </div>
   </div>
