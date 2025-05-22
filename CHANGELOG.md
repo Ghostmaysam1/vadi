@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Ghostmaysam1/vadi/compare/v1.2.0...v1.2.1) (2025-05-22)
+
+
+### Bug Fixes
+
+* not scroll anymore when change routes ([#20](https://github.com/Ghostmaysam1/vadi/issues/20)) ([90f45e7](https://github.com/Ghostmaysam1/vadi/commit/90f45e7eed9932e7775d565d0430f250d79a2597))
+
 # [1.2.0](https://github.com/Ghostmaysam1/vadi/compare/v1.1.0...v1.2.0) (2025-05-22)
 
 
