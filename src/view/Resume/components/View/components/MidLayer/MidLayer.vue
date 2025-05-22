@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <div class="w-full relative z-20 mt-[-20px]">
+  <div dir="rtl" class="w-full relative z-20 mt-[-20px]">
     <div class="w-full min-h-[200px] bg-white rounded-b-2xl border-2 border-[#E8D8D8] p-6 shadow-lg">
       <div class="bg-[#FFEEDA] rounded-xl border-2 border-[#E8D8D8] p-6 h-full overflow-y-auto scroll-hidden">
         <h3 class="text-xl font-semibold text-[#87675a] mb-4">معرفی حرفه‌ای</h3>

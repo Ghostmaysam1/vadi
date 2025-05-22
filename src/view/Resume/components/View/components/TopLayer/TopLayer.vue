@@ -41,7 +41,7 @@ defineProps<{
 
         <div class="w-full md:w-1/3 flex justify-center items-center">
           <div class="relative w-full h-64 md:h-full rounded-xl overflow-hidden border-2 border-[#E8D8D8] shadow-md">
-            <img src="/images/xb.png" alt="میثم آصفی"
+            <img src="/images/xb.png" :alt="member.name"
               class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
             <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
