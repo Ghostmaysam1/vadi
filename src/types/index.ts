@@ -3,5 +3,5 @@ export type Member = {
     name: string;
     position: string;
     image: string;
-    skills: string[]
+    skills?: string[]
 }

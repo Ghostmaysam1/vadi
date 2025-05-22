@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import TopLayer from './components/TopLayer/TopLayer.vue';
-import MidLayer from './components/MidLayer/MidLayer.vue';
+// import MidLayer from './components/MidLayer/MidLayer.vue';
 import BottomLayer from './components/BottomLayer/BottomLayer.vue';
 import { useRoute } from 'vue-router';
 import useStore from '../../../../store';
@@ -12,9 +12,9 @@ const member = store.team.filter((m)=> m.id === route.params.id)[0];
 </script>
 
 <template>
-  <div class="w-full max-w-4xl lg:max-w-5xl mx-auto relative flex flex-col items-center px-4 pt-[100px]">
+  <div class="w-full relative flex flex-col items-center pt-[80px]">
     <TopLayer :member="member" />
-    <MidLayer />
+    <!-- <MidLayer /> -->
     <BottomLayer />
   </div>
 </template>

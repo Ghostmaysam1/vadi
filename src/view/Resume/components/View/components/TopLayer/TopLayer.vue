@@ -4,46 +4,46 @@ import type { Member } from '../../../../../../types';
 defineProps<{
   member: Member
 }>()
+
+
 </script>
 
 <template>
-  <div class="w-full relative z-30">
-    <div class="flex justify-center gap-1 mb-[-2px]">
-      <button
-        class="px-8 py-3 bg-white rounded-t-2xl border-t-2 border-x-2 border-[#E8D8D8] text-black text-xl font-medium transition-all duration-300 hover:bg-[#FFB45C]">
-        رزومه
-      </button>
-    </div>
+  <div class="w-full relative z-30 _1232">
 
-    <div class="w-full min-h-[250px] bg-white rounded-2xl  border-2 border-[#E8D8D8] p-6 shadow-lg">
-      <div class="flex flex-col md:flex-row gap-6 h-full">
+    <div class="w-full h-full min-h-[250px] bg-white bg-cover rounded-2xl">
+      <div class="flex flex-col md:flex-row-reverse gap-6 h-full items-center">
 
-        <div class="flex-1 flex flex-col gap-4">
-          <div
-            class="bg-[#FFEEDA] w-full p-4 rounded-2xl border-2 border-dashed border-[#E8D8D8] flex items-center justify-center">
-            <h2 class="text-2xl font-bold text-[#526168]" v-text="member.name"></h2>
+        <div class="flex-1 h-min flex flex-col gap-4">
+          <div class="bg-[#FFEEDA]/10 w-full p-4 gap-3 rounded-2xl flex flex-col justify-center items-end">
+            <h2 class="text-4xl font-bold text-[#526168]">سلام من {{ member.name }} هستم</h2>
+            <div>
+              <div class="flex items-center mb-3 flex-row-reverse gap-2">
+                <span class="h-1 w-[50px] bg-amber-300"></span>
+                <h3 class="text-lg font-semibold text-[#87675a]" v-text="member.position"></h3>
+              </div>
+            </div>
           </div>
 
-          <div dir="rtl" class="bg-[#FFEEDA] rounded-2xl border-2 border-[#E8D8D8] p-4 h-full">
-            <div class="flex justify-between items-center mb-3">
-              <h3 class="text-lg font-semibold text-[#87675a]">مهارت‌های تخصصی</h3>
-              <p class="text-md font-bold text-gray-600" v-text="member.position"></p>
-            </div>
+          <div dir="rtl" class="bg-[#FFEEDA]/10 gap-4 flex flex-col rounded-2xl p-4 h-full">
 
-            <div dir="ltr" class="flex flex-wrap gap-2 overflow-x-auto scroll-hidden">
-              <span v-for="(skill, index) in member.skills" :key="index"
-                class="px-4 py-2 rounded-full bg-white border border-[#E8D8D8] text-sm font-medium shadow-sm hover:bg-[#FFEEDA] transition-colors">
-                {{ skill }}
-              </span>
-            </div>
+
+            <p class="w-2/3 font-normal text-2xl text-justify">
+              می توانم با توجه به تجربه و شناخت بازار
+              اقتصادی ترین مسیر را جهت اجرای طرحهای دکوراسیون داخلی
+              مدنظر شما پیشنهاد دهم و هم در اجرایش نظارت داشته باشم.
+              و به این ترتیب با کمک یکدیگر ، بهترین حالت را برای تحقق رویای شما
+              در حوزه دکوراسیون داخلی خانه یا محل کارتان را ایجاد می کنیم.
+
+            </p>
           </div>
         </div>
 
-        <div class="w-full md:w-1/3 flex justify-center items-center">
-          <div class="relative w-full h-64 md:h-full rounded-xl overflow-hidden border-2 border-[#E8D8D8] shadow-md">
-            <img src="/images/xb.png" :alt="member.name"
-              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div class="w-1/3 h-min relative left-20 bottom-5 flex justify-center items-center">
+          <div class="relative w-full h-64 flex justify-end md:h-full overflow-hidden">
+            <img :src="member.image" :alt="member.name"
+              class="w-full object-cover transition-transform duration-500 hover:scale-105">
+            <div class="absolute inset-0"></div>
           </div>
         </div>
       </div>
@@ -54,5 +54,9 @@ defineProps<{
 <style scoped>
 .scroll-hidden::-webkit-scrollbar {
   display: none;
+}
+
+._1232 {
+  height: calc(100vh - 80px);
 }
 </style>
