@@ -2,11 +2,11 @@
 import Menu from "./components/Menu/Menu.vue";
 
 const navItems = [
-  { title: 'خدمات', path: '/services' },
-  { title: 'ابزارها', path: '/tools' },
-  { title: 'فروشگاه', path: '/shop' },
-  { title: 'مقالات', path: '/blog' },
-  { title: 'ارتباط با ما', path: '/contact' },
+  { title: 'خدمات', path: '/' },
+  { title: 'ابزارها', path: '/' },
+  { title: 'فروشگاه', path: '/' },
+  { title: 'مقالات', path: '/' },
+  { title: 'ارتباط با ما', path: '/' },
   { title: 'همکاران', path: '/team' }
 ];
 </script>
