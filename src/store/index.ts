@@ -1,13 +1,9 @@
 import { defineStore } from "pinia";
+import type { Member } from "../types";
+
 
 interface Store {
-    team: {
-        id: string;
-        name: string;
-        position: string;
-        image: string;
-        skills: string[]
-    }[]
+    team: Member[]
 }
 
 const useStore = defineStore("store", {

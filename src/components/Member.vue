@@ -32,7 +32,7 @@ defineProps<{
           <span v-if="member.skills.length > 3" class="px-3 py-1 shadow-md text-xs bg-[#f3f0ed] text-[#526168] rounded-full">...</span>
         </div>
 
-        <router-link :to="`/team/${member.name}`"
+        <router-link :to="`/team/${member.id}`"
           class="inline-block px-6 cursor-pointer py-2 bg-gradient-to-r from-[#526168] to-[#87675a] text-white rounded-full text-sm font-medium hover:shadow-lg transition-all">
           مشاهده رزومه
         </router-link>

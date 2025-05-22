@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-const skills = ref([
-  'Figma', 'Adobe XD', 'UI/UX Design',
-  'Vue.js', 'React', 'Prototyping',
-  'User Research', 'Interaction Design'
-]);
+import type { Member } from '../../../../../../types';
+
+defineProps<{
+  member: Member
+}>()
 </script>
 
 <style scoped>
@@ -28,17 +28,17 @@ const skills = ref([
         <div class="flex-1 flex flex-col gap-4">
           <div
             class="bg-[#FFEEDA] w-full p-4 rounded-2xl border-2 border-dashed border-[#E8D8D8] flex items-center justify-center">
-            <h2 class="text-2xl font-bold text-[#526168]">میثم آصفی</h2>
+            <h2 class="text-2xl font-bold text-[#526168]" v-text="member.name"></h2>
           </div>
 
           <div class="bg-[#FFEEDA] rounded-2xl border-2 border-[#E8D8D8] p-4 h-full">
             <div class="flex justify-between items-center mb-3">
               <h3 class="text-lg font-semibold text-[#87675a]">مهارت‌های تخصصی</h3>
-              <p class="text-sm text-gray-600">طراح و توسعه‌دهنده</p>
+              <p class="text-sm text-gray-600" v-text="member.position"></p>
             </div>
 
             <div class="flex flex-wrap gap-2 overflow-x-auto scroll-hidden">
-              <span v-for="(skill, index) in skills" :key="index"
+              <span v-for="(skill, index) in member.skills" :key="index"
                 class="px-4 py-2 rounded-full bg-white border border-[#E8D8D8] text-sm font-medium shadow-sm hover:bg-[#FFEEDA] transition-colors">
                 {{ skill }}
               </span>
