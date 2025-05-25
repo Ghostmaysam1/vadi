@@ -6,6 +6,8 @@ interface Store {
     team: Member[]
 }
 
+const images = ["https://picsum.photos/seed/0.06799319178048224/800/600", "https://picsum.photos/seed/0.2815178513811256/800/600", "https://picsum.photos/seed/0.6665297916592013/800/600", "https://picsum.photos/seed/0.7765853901376286/800/600"];
+
 const useStore = defineStore("store", {
     state: (): Store => ({
         team: [
@@ -13,49 +15,75 @@ const useStore = defineStore("store", {
                 id: "345345-345345",
                 name: "میثم آصفی",
                 position: "توسعه دهنده Front-End",
-                image: "/images/men.png",
-                skills: ["Vue.js", "React", "Typescript"],
+                image: "/team/men.png",bio: `اقتصادی‌ترین مسیر را جهت اجرای طرح‌های دکوراسیون داخلی
+مدنظر شما پیشنهاد دهم و هم در اجرایش نظارت داشته باشم.
+و به این ترتیب با کمک یکدیگر، بهترین حالت را برای تحقق رویای شما
+در حوزه دکوراسیون داخلی خانه یا محل کارتان را ایجاد می‌کنیم.`,
+                projects: [{name: 'project 1', images}, {name: 'project 2', images}, {name: 'project 3', images}]
             },
             {
                 id: "375145-395645",
                 name: "عسل",
                 position: "طراح",
-                image: "/images/xb.png",
-                skills: ["Adobe XD", "Figma", "UI/UX"],
+                image: "/images/xb.png",bio: `اقتصادی‌ترین مسیر را جهت اجرای طرح‌های دکوراسیون داخلی
+مدنظر شما پیشنهاد دهم و هم در اجرایش نظارت داشته باشم.
+و به این ترتیب با کمک یکدیگر، بهترین حالت را برای تحقق رویای شما
+در حوزه دکوراسیون داخلی خانه یا محل کارتان را ایجاد می‌کنیم.`,
+                projects: [{name: 'project 1', images}, {name: 'project 2', images}, {name: 'project 3', images}]
             },
             {
                 id: "905340-345305",
                 name: "محسن",
                 position: "توسعه دهنده Back-End",
-                image: "/images/xa.png",
-                skills: ["NET.", "#C", "TypeScript"],
+                image: "/images/xa.png",bio: `اقتصادی‌ترین مسیر را جهت اجرای طرح‌های دکوراسیون داخلی
+مدنظر شما پیشنهاد دهم و هم در اجرایش نظارت داشته باشم.
+و به این ترتیب با کمک یکدیگر، بهترین حالت را برای تحقق رویای شما
+در حوزه دکوراسیون داخلی خانه یا محل کارتان را ایجاد می‌کنیم.`,
+                projects: [{name: 'project 1', images}, {name: 'project 2', images}, {name: 'project 3', images}]
             },
             {
                 id: "342322-325345",
                 name: "امیر اسدی",
                 position: "Dev ops",
                 image: "/images/xc.png",
-                skills: ["Deploy", "Github", "Docker", "Gitlab"],
+                bio: `اقتصادی‌ترین مسیر را جهت اجرای طرح‌های دکوراسیون داخلی
+مدنظر شما پیشنهاد دهم و هم در اجرایش نظارت داشته باشم.
+و به این ترتیب با کمک یکدیگر، بهترین حالت را برای تحقق رویای شما
+در حوزه دکوراسیون داخلی خانه یا محل کارتان را ایجاد می‌کنیم.`,
+                projects: [{name: 'project 1', images}, {name: 'project 2', images}, {name: 'project 3', images}]
             },
             {
                 id: "361341-645945",
                 name: "میثم آصفی",
                 position: "توسعه دهنده Front-End",
                 image: "/images/xa.png",
-                skills: ["Vue.js", "React", "UI/UX"],
+                bio: `اقتصادی‌ترین مسیر را جهت اجرای طرح‌های دکوراسیون داخلی
+مدنظر شما پیشنهاد دهم و هم در اجرایش نظارت داشته باشم.
+و به این ترتیب با کمک یکدیگر، بهترین حالت را برای تحقق رویای شما
+در حوزه دکوراسیون داخلی خانه یا محل کارتان را ایجاد می‌کنیم.`,
+                projects: [{name: 'project 1', images}, {name: 'project 2', images}, {name: 'project 3', images}]
             },
             {
                 id: "545525-345545",
                 name: "میثم آصفی",
                 position: "توسعه دهنده Full-Stack",
                 image: "/images/xb.png",
-                skills: ["Nodejs", "React", "UI/UX"],
+                bio: `اقتصادی‌ترین مسیر را جهت اجرای طرح‌های دکوراسیون داخلی
+مدنظر شما پیشنهاد دهم و هم در اجرایش نظارت داشته باشم.
+و به این ترتیب با کمک یکدیگر، بهترین حالت را برای تحقق رویای شما
+در حوزه دکوراسیون داخلی خانه یا محل کارتان را ایجاد می‌کنیم.`,
+                projects: [{name: 'project 1', images}, {name: 'project 2', images}, {name: 'project 3', images}]
             },
             {
                 id: "34534-3364534",
                 name: "پوریا بابایی",
                 position: "مشاور اقتصادی و ناظر اجرا",
-                image: "/team/babaee.png"
+                bio: `اقتصادی‌ترین مسیر را جهت اجرای طرح‌های دکوراسیون داخلی
+مدنظر شما پیشنهاد دهم و هم در اجرایش نظارت داشته باشم.
+و به این ترتیب با کمک یکدیگر، بهترین حالت را برای تحقق رویای شما
+در حوزه دکوراسیون داخلی خانه یا محل کارتان را ایجاد می‌کنیم.`,
+                image: "/team/babaee.png",
+                projects: [{name: 'project 1', images}, {name: 'project 2', images}, {name: 'project 3', images}]
             }
         ]
     })
