@@ -21,13 +21,7 @@ defineProps<{
             </div>
 
             <div class="bg-[#FFEEDA]/10 rounded-2xl p-4">
-              <p class="font-normal text-lg text-justify">
-                می‌توانم با توجه به تجربه و شناخت بازار
-                اقتصادی‌ترین مسیر را جهت اجرای طرح‌های دکوراسیون داخلی
-                مدنظر شما پیشنهاد دهم و هم در اجرایش نظارت داشته باشم.
-                و به این ترتیب با کمک یکدیگر، بهترین حالت را برای تحقق رویای شما
-                در حوزه دکوراسیون داخلی خانه یا محل کارتان را ایجاد می‌کنیم.
-              </p>
+              <p class="font-normal text-lg text-justify" v-text="member.bio"></p>
             </div>
           </div>
 
@@ -49,13 +43,7 @@ defineProps<{
             </div>
 
             <div class="bg-[#FFEEDA]/10 gap-4 flex flex-col rounded-2xl p-4 h-full">
-              <p class="w-[80%] font-normal text-2xl text-justify">
-                می‌توانم با توجه به تجربه و شناخت بازار
-                اقتصادی‌ترین مسیر را جهت اجرای طرح‌های دکوراسیون داخلی
-                مدنظر شما پیشنهاد دهم و هم در اجرایش نظارت داشته باشم.
-                و به این ترتیب با کمک یکدیگر، بهترین حالت را برای تحقق رویای شما
-                در حوزه دکوراسیون داخلی خانه یا محل کارتان را ایجاد می‌کنیم.
-              </p>
+              <p class="w-[80%] font-normal text-2xl text-justify" v-text="member.bio"></p>
             </div>
           </div>
 

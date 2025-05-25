@@ -7,6 +7,7 @@ export type Member = {
     id: string;
     name: string;
     position: string;
+    bio: string;
     image: string;
     projects?: Project[]
 }
