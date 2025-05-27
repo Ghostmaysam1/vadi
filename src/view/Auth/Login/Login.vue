@@ -15,26 +15,20 @@ const handleLogin = () => {
 </script>
 
 <template>
-  <div
-    class="min-h-screen bg-gradient-to-b from-[#f8f5f2] to-white flex items-center justify-center p-4"
-  >
-    <div
-      class="w-full max-w-lg bg-white rounded-3xl shadow-xl overflow-hidden border border-[#E8D8D8]"
-    >
+  <div class="min-h-screen bg-gradient-to-b from-[#f8f5f2] to-white flex items-center justify-center p-4">
+    <div class="w-full max-w-lg bg-white rounded-3xl shadow-xl overflow-hidden border border-[#E8D8D8]" dir="rtl">
       <div class="flex border-b border-[#E8D8D8]">
         <RouterLink to="login">
-            <button
-          class="flex-1 text-[#87675a] border-b-2 border-[#87675a] py-4 px-6 text-center font-medium text-lg focus:outline-none transition-all duration-300"
-        >
-          ورود
-        </button>
+          <button
+            class="flex-1 text-[#87675a] border-b-2 border-[#87675a] py-4 px-6 text-center font-medium text-lg focus:outline-none transition-all duration-300">
+            ورود
+          </button>
         </RouterLink>
         <RouterLink to="signup">
-            <button
-          class="flex-1 text-gray-500 hover:text-[#526168] py-4 px-6 text-center font-medium text-lg focus:outline-none transition-all duration-300"
-        >
-          ثبت‌نام
-        </button>
+          <button
+            class="flex-1 text-gray-500 hover:text-[#526168] py-4 px-6 text-center font-medium text-lg focus:outline-none transition-all duration-300">
+            ثبت‌نام
+          </button>
         </RouterLink>
       </div>
 
@@ -46,49 +40,30 @@ const handleLogin = () => {
 
           <form @submit.prevent="handleLogin">
             <div class="mb-4">
-              <input
-                type="email"
-                v-model="loginData.email"
-                placeholder="ایمیل"
+              <input type="email" v-model="loginData.email" placeholder="ایمیل"
                 class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
-                required
-              />
+                required />
             </div>
 
             <div class="mb-4">
-              <input
-                type="password"
-                v-model="loginData.password"
-                placeholder="رمز عبور"
+              <input type="password" v-model="loginData.password" placeholder="رمز عبور"
                 class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
-                required
-              />
+                required />
             </div>
 
             <div class="flex items-center justify-between mb-6">
               <div class="flex gap-1 items-center">
-                <input
-                  id="remember"
-                  type="checkbox"
-                  v-model="loginData.remember"
-                  class="h-4 w-4 text-[#87675a] focus:ring-[#87675a] border-[#E8D8D8] rounded"
-                />
-                <label for="remember" class="mr-2 block text-sm text-gray-700"
-                  >مرا به خاطر بسپار</label
-                >
+                <input id="remember" type="checkbox" v-model="loginData.remember"
+                  class="h-4 w-4 text-[#87675a] focus:ring-[#87675a] border-[#E8D8D8] rounded" />
+                <label for="remember" class="mr-2 block text-sm text-gray-700">مرا به خاطر بسپار</label>
               </div>
-              <button
-                type="button"
-                class="text-sm text-[#87675a] hover:underline"
-              >
+              <button type="button" class="text-sm text-[#87675a] hover:underline">
                 فراموشی رمز عبور؟
               </button>
             </div>
 
-            <button
-              type="submit"
-              class="w-full bg-gradient-to-r from-[#526168] to-[#87675a] text-white py-3 px-4 rounded-lg font-medium hover:opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#87675a]"
-            >
+            <button type="submit"
+              class="w-full bg-gradient-to-r from-[#526168] to-[#87675a] text-white py-3 px-4 rounded-lg font-medium hover:opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#87675a]">
               ورود
             </button>
           </form>

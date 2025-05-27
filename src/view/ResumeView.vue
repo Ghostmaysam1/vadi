@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="w-full min-h-[100vh]">
+    <div class="w-full min-h-[100vh] bg-gradient-to-r from-[#dedddb] to-white">
         <Resume />
     </div>
 </template>

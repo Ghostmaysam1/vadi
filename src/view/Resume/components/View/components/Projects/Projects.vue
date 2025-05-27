@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <div class="w-full relative z-10 mt-[-20px]">
-    <div class="w-full min-h-[250px]  bg-white rounded-b-2xl border-2 border-[#E8D8D8] p-6 shadow-lg">
+    <div class="w-full min-h-[250px] rounded-b-2xl p-6 shadow-lg">
       <h3
         class="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[#526168] to-[#87675a] mb-4 text-center">
         پروژه‌های منتخب</h3>
