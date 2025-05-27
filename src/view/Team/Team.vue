@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref} from 'vue';
 
-import Member from '../../components/Member.vue';
+import MemberResume from './components/MemberResume/MemberResume.vue';
 import useStore from '../../store';;
 
 const store = useStore();
@@ -23,9 +23,9 @@ const team = ref(store.team);
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 gap-8">
                 <template v-for="member in team">
-                    <Member :member="member" />
+                    <MemberResume :member="member" />
                 </template>
             </div>
         </div>
