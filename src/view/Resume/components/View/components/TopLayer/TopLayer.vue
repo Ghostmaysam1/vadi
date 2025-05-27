@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <div class="w-full relative z-30 _1232">
-    <div class="w-full h-full min-h-[250px] bg-white bg-cover rounded-2xl">
+    <div class="w-full h-full min-h-[250px] bg-cover rounded-2xl">
       <div class="flex flex-col md:flex-row-reverse gap-6 h-full items-center">
         <div class="md:hidden w-full flex flex-col-reverse gap-6 p-4">
           <div class="w-full flex flex-col gap-4">
@@ -54,6 +54,9 @@ defineProps<{
         </div>
       </div>
     </div>
+    <span class="absolute bottom-5 left-1/2 transform -translate-x-1/2">
+      <img src="/icons/down-arrow.svg" class="w-12 animate-bounce " alt="scroll down">
+    </span>
   </div>
 </template>
 

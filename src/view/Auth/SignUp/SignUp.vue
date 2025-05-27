@@ -17,7 +17,7 @@ const handleRegister = () => {
 
 <template>
   <div class="min-h-screen bg-gradient-to-b from-[#f8f5f2] to-white flex items-center justify-center p-4">
-    <div class="w-full max-w-lg bg-white rounded-3xl shadow-xl overflow-hidden border border-[#E8D8D8]">
+    <div class="w-full max-w-lg bg-white rounded-3xl shadow-xl overflow-hidden border border-[#E8D8D8]" dir="rtl">
       <div class="flex border-b border-[#E8D8D8]">
         <RouterLink to="login">
           <button
