@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router';
 import useStore from '../../../../store';
 
 import TopLayer from './components/TopLayer/TopLayer.vue';
-import BottomLayer from './components/BottomLayer/BottomLayer.vue';
+import Projects from './components/Projects/Projects.vue';
 const store = useStore();
 const route = useRoute();
 
@@ -13,7 +13,7 @@ const member = store.team.filter((m) => m.id === route.params.id)[0];
 
 <template>
   <div class="w-full relative flex flex-col items-center pt-[80px]">
-    <TopLayer :member="member" />
-    <BottomLayer />
+    <TopLayer :member />
+    <Projects :member />
   </div>
 </template>
