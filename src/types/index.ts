@@ -1,4 +1,4 @@
-interface Project {
+export type Project = {
     name: string;
     images: string[];
 }
