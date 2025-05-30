@@ -12,7 +12,7 @@ const { width } = useWindowSize();
 const team = store.team;
 
 const config = reactive({
-  height: 500,
+  height: 550,
   itemsToShow: 3,
   gap: 32,
   wrapAround: true,
