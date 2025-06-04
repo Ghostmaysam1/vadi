@@ -22,13 +22,10 @@ const images = [
         >
           <img 
             :src="image"
-            class="w-full h-full object-cover aspect-square transition-transform duration-700 group-hover:scale-110"
+            class="w-full h-full object-cover aspect-square transition-transform duration-700"
           />
 
-          <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
-
-            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#526168] to-[#87675a] opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-200"></div>
-          </div>
+          <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4"></div>
         </div>
       </div>
     </div>
