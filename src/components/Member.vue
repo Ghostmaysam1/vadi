@@ -32,9 +32,6 @@ defineProps<{
           </router-link>
         </div>
       </div>
-
-      <div class="absolute inset-0 bg-[#87675a]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-      </div>
     </div>
   </div>
 </template>
