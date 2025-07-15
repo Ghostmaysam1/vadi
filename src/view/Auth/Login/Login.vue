@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { reactive } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 const router = useRouter();
 
-const loginData = ref({
-  email: "",
+const loginData = reactive<{
+  phoneNumber: string,
+  password: string,
+  remember: boolean
+}>({
+  phoneNumber: "",
   password: "",
   remember: false,
 });
@@ -40,13 +44,13 @@ const handleLogin = () => {
 
           <form @submit.prevent="handleLogin">
             <div class="mb-4">
-              <input type="email" v-model="loginData.email" placeholder="ایمیل"
+              <input type="text" v-model="loginData.phoneNumber" placeholder="تلفن"
                 class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
                 required />
             </div>
 
             <div class="mb-4">
-              <input type="password" v-model="loginData.password" placeholder="رمز عبور"
+              <input type="password" v-model="loginData.password" placeholder="گذرواژه"
                 class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
                 required />
             </div>
