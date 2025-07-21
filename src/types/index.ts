@@ -22,4 +22,13 @@ export type RegisterData = {
     confirmPassword: string
 }
 
+export type LoginData = {
+  phoneNumber: string,
+  password: string
+}
+
+export type ForgotPasswordData = {
+  phoneNumber: string
+}
+
 export type ApiResult = {type: 'success' | 'error', body: any}

@@ -1,20 +1,25 @@
 <script setup lang="ts">
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";
+import useApi from "../../../store/api";
+import type { LoginData } from "../../../types";
+const api = useApi();
 const router = useRouter();
 
-const loginData = reactive<{
-  phoneNumber: string,
-  password: string,
-  remember: boolean
-}>({
+const loginData = reactive<LoginData>({
   phoneNumber: "",
   password: "",
-  remember: false,
 });
 
-const handleLogin = () => {
-  router.push('/')
+const remember = ref(false);
+
+const handleLogin = async () => {
+  const response = await api.login(loginData);
+
+  if (response.type == 'success')
+    router.push('/')
+  else
+    alert("مشکلی پیش آمد لطفا دوباره امتحان کنید")
 };
 </script>
 
@@ -57,13 +62,15 @@ const handleLogin = () => {
 
             <div class="flex items-center justify-between mb-6">
               <div class="flex gap-1 items-center">
-                <input id="remember" type="checkbox" v-model="loginData.remember"
+                <input id="remember" type="checkbox" v-model="remember"
                   class="h-4 w-4 text-[#87675a] focus:ring-[#87675a] border-[#E8D8D8] rounded" />
                 <label for="remember" class="mr-2 block text-sm text-gray-700">مرا به خاطر بسپار</label>
               </div>
-              <button type="button" class="text-sm text-[#87675a] hover:underline">
-                فراموشی رمز عبور؟
-              </button>
+              <RouterLink to="/auth/forgotPassword">
+                <button type="button" class="text-sm text-[#87675a] hover:underline">
+                  فراموشی رمز عبور؟
+                </button>
+              </RouterLink>
             </div>
 
             <button type="submit"
