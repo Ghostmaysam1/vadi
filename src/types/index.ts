@@ -11,3 +11,15 @@ export type Member = {
     image: string;
     projects?: Project[]
 }
+
+export type RegisterData = {
+    firstName: string,
+    lastName: string,
+    phoneNumber: string,
+    address?: string,
+    emailAddress?: string,
+    password: string,
+    confirmPassword: string
+}
+
+export type ApiResult = {type: 'success' | 'error', body: any}

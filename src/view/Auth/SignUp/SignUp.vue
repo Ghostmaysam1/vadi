@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import { reactive } from "vue";
 import { RouterLink, useRouter } from "vue-router";
+import useApi from "../../../store/api";
+import type { RegisterData } from "../../../types";
+const api = useApi();
 const router = useRouter();
 
-const registerData = reactive<{
-  firstName: string,
-  lastName: string,
-  phoneNumber: string,
-  address: string,
-  password: string,
-  emailAddress: string,
-  confirmPassword: string
-}>({
+const registerData = reactive<RegisterData>({
   firstName: "",
   lastName: "",
   phoneNumber: "",
@@ -21,9 +16,14 @@ const registerData = reactive<{
   emailAddress: "",
 });
 
-const handleRegister = () => {
-  console.log(registerData)
-  router.push('/login')
+const handleRegister = async () => {
+  const response = await api.register(registerData);
+
+  if (response.type == 'success') {
+    router.push('/login');
+  } else {
+    alert("مشکلی پیش آمده لطفا دوباره امتحان کنید");
+  }
 };
 </script>
 
@@ -52,52 +52,38 @@ const handleRegister = () => {
           </h2>
 
           <form @submit.prevent="handleRegister">
-            <div class="mb-1 flex gap-2">
-              <div class="flex flex-col gap-2">
-                <div class="">
-                  <input type="text" v-model="registerData.firstName" placeholder="نام"
-                    class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
-                    required />
-                </div>
-
-                <div class="">
-                  <input type="text" v-model="registerData.lastName" placeholder="نام خانوادگی"
-                    class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
-                    required />
-                </div>
+            <div class="mb-3 flex gap-2">
+              <div>
+                <input type="text" v-model="registerData.firstName" placeholder="نام"
+                  class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
+                  required />
               </div>
 
-              <div class="h-full"> <!-- ========= Address ======== -->
-                <textarea type="password" v-model="registerData.address" placeholder="آدرس"
-                  class="w-full h-28 px-4 py-3 resize-none rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
+              <div>
+                <input type="text" v-model="registerData.lastName" placeholder="نام خانوادگی"
+                  class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
                   required />
               </div>
             </div>
 
-            <div class="mb-1 flex gap-2">
-              <div class="mb-4">
+            <div class="mb-1">
+              <div class="mb-3">
                 <input type="text" v-model="registerData.phoneNumber" placeholder="تلفن"
                   class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
                   required />
               </div>
-              <div class="mb-4">
-                <input type="email" v-model="registerData.emailAddress" placeholder="ایمیل"
-                  class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
-                  required />
-              </div>
             </div>
 
-            <!-- ========================== -->
-            <div class="mb-4"> <!-- ========== Password =========== -->
+            <div class="mb-3"> <!-- ========== Password =========== -->
               <input type="password" v-model="registerData.password" placeholder="گذرواژه"
-              class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
-              required />
+                class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
+                required />
             </div>
-            
-            <div class="mb-4"> <!-- ========== re-Password =========== -->
+
+            <div class="mb-3"> <!-- ========== re-Password =========== -->
               <input type="password" v-model="registerData.confirmPassword" placeholder="تایید گذواژه"
-              class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
-              required />
+                class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
+                required />
             </div>
             <!-- ========================== -->
 

@@ -8,7 +8,7 @@ import SignUp from './Auth/SignUp/SignUp.vue';
 
 <template>
   <div class="w-full min-h-[100vh]">
-    <Login v-if="route.path == '/login'" />
-    <SignUp v-else-if="route.path == '/signup'" />
+    <KeepAlive><Login  v-if="route.path == '/login'" /></KeepAlive>
+    <KeepAlive><SignUp v-if="route.path == '/signup'" /></KeepAlive>
   </div>
 </template>
