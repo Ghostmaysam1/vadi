@@ -40,7 +40,7 @@ async function handleForm() {
 
                         <button type="submit"
                             class="w-full bg-gradient-to-r from-[#526168] to-[#87675a] text-white py-3 px-4 rounded-lg font-medium hover:opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#87675a]">
-                            ثبت
+                            ارسال کد
                         </button>
                     </form>
                 </div>
