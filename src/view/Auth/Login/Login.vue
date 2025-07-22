@@ -3,7 +3,7 @@ import { reactive, ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 import useApi from "../../../store/api";
 import type { LoginData } from "../../../types";
-const api = useApi();
+const Api = useApi();
 const router = useRouter();
 
 const loginData = reactive<LoginData>({
@@ -14,7 +14,7 @@ const loginData = reactive<LoginData>({
 const remember = ref(false);
 
 const handleLogin = async () => {
-  const response = await api.login(loginData);
+  const response = await Api.Login(loginData);
 
   if (response.type == 'success')
     router.push('/')

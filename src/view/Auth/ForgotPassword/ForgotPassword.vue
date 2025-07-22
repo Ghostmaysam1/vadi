@@ -4,14 +4,14 @@ import useApi from '../../../store/api';
 import type { ForgotPasswordData } from '../../../types';
 import { useRouter } from 'vue-router';
 const router = useRouter();
-const api = useApi();
+const Api = useApi();
 
 const forgotPasswordData = reactive<ForgotPasswordData>({
     phoneNumber: ''
 })
 
 async function handleForm() {
-    const response = await api.forgotPassword(forgotPasswordData);
+    const response = await Api.ForgotPassword(forgotPasswordData);
 
     if (response.type == 'success')
         router.push('/login')

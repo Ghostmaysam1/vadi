@@ -10,7 +10,6 @@ const sendRequest = Symbol("sendRequest");
 const useApi = defineStore("api", {
     state: (): ApiStore => ({
         api_link: 'http://localhost:8000/',
-
     }),
     actions: {
         async [sendRequest](url: (`/auth/${string}` | `/coworker${string}`), data: (LoginData | RegisterData | ForgotPasswordData)) {
@@ -33,13 +32,13 @@ const useApi = defineStore("api", {
             return response;
 
         },
-        async register(data: RegisterData): Promise<ApiResult> {
+        async Register(data: RegisterData): Promise<ApiResult> {
             return await this[sendRequest]('/auth/register', data);
         },
-        async login(data: LoginData): Promise<ApiResult> {
+        async Login(data: LoginData): Promise<ApiResult> {
             return await this[sendRequest]('/auth/login', data);
         },
-        async forgotPassword(data: ForgotPasswordData): Promise<ApiResult> {
+        async ForgotPassword(data: ForgotPasswordData): Promise<ApiResult> {
             return await this[sendRequest]('/auth/forgotPassword', data);
         }
     }

@@ -3,7 +3,7 @@ import { reactive } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 import useApi from "../../../store/api";
 import type { RegisterData } from "../../../types";
-const api = useApi();
+const Api = useApi();
 const router = useRouter();
 
 const registerData = reactive<RegisterData>({
@@ -17,7 +17,7 @@ const registerData = reactive<RegisterData>({
 });
 
 const handleRegister = async () => {
-  const response = await api.register(registerData);
+  const response = await Api.Register(registerData);
 
   if (response.type == 'success') {
     router.push('/login');
