@@ -3,14 +3,14 @@ import type { ApiResult, RegisterData, LoginData, ForgotPasswordData, VerifyConf
 import VerifyConfirmationCode from "../view/Auth/VerifyConfirmationCode/VerifyConfirmationCode.vue";
 
 interface ApiStore {
-    api_link: `http://${string}/${string}`
+    api_link: `${'http' | 'https'}://${string}`
 }
 
 const sendRequest = Symbol("sendRequest");
 
 const useApi = defineStore("api", {
     state: (): ApiStore => ({
-        api_link: 'http://localhost:8000/',
+        api_link: 'http://localhost:8000/'
     }),
     actions: {
         async [sendRequest](url: (`/auth/${string}` | `/coworker${string}`), data: (LoginData | RegisterData | ForgotPasswordData)) {
@@ -18,7 +18,8 @@ const useApi = defineStore("api", {
                 {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer TOKEN`
                     },
                     body: JSON.stringify(data)
                 }

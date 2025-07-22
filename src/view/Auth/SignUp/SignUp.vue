@@ -10,10 +10,8 @@ const registerData = reactive<RegisterData>({
   firstName: "",
   lastName: "",
   phoneNumber: "",
-  address: "",
   password: "",
   confirmPassword: "",
-  emailAddress: "",
 });
 
 const handleRegister = async () => {
