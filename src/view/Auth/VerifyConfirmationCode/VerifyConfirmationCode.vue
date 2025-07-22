@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
 import useApi from '../../../store/api';
-import type { ForgotPasswordData } from '../../../types';
+import type { VerifyConfirmationCodeData } from '../../../types';
 import { useRouter } from 'vue-router';
 const router = useRouter();
 const Api = useApi();
 
-const forgotPasswordData = reactive<ForgotPasswordData>({
-    phoneNumber: ''
+const VerifyConfirmationCodeData = reactive<VerifyConfirmationCodeData>({
+    phoneNumber: '',
+    token: ''
 })
 
 async function handleForm() {
-    // const response = await Api.ForgotPassword(forgotPasswordData);
-    const response = {type: 'success'};
+    const response = await Api.VerifyConfirmationCode(VerifyConfirmationCodeData);
 
     if (response.type == 'success')
-        router.push('/auth/verifyConfirmationCode')
+        router.push('/login')
     else
         alert("مشکلی پیش آمد لطفا دوباره امتحان کنید")
 }
@@ -29,13 +29,13 @@ async function handleForm() {
             <div class="p-8">
                 <div class="space-y-6">
                     <h2 class="text-2xl font-bold text-[#526168] text-center mb-6">
-                        بازیابی رمز عبور
+                        تایید کد
                     </h2>
 
                     <form @submit.prevent="handleForm">
                         <div class="mb-4">
-                            <input type="text" v-model="forgotPasswordData.phoneNumber" placeholder="تلفن"
-                                class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none focus:ring-2 focus:ring-[#87675a] transition-all"
+                            <input type="text" v-model="VerifyConfirmationCodeData.token" placeholder="کد 6 رقمی"
+                                class="w-full px-4 py-3 rounded-lg border border-[#E8D8D8] focus:outline-none text-center focus:ring-2 focus:ring-[#87675a] transition-all"
                                 required />
                         </div>
 

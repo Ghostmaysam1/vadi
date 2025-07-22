@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
-import type { ApiResult, RegisterData, LoginData, ForgotPasswordData } from "../types";
+import type { ApiResult, RegisterData, LoginData, ForgotPasswordData, VerifyConfirmationCodeData } from "../types";
+import VerifyConfirmationCode from "../view/Auth/VerifyConfirmationCode/VerifyConfirmationCode.vue";
 
 interface ApiStore {
     api_link: `http://${string}/${string}`
@@ -40,6 +41,9 @@ const useApi = defineStore("api", {
         },
         async ForgotPassword(data: ForgotPasswordData): Promise<ApiResult> {
             return await this[sendRequest]('/auth/forgotPassword', data);
+        },
+        async VerifyConfirmationCode(data: VerifyConfirmationCodeData): Promise<ApiResult> {
+            return await this[sendRequest]('/auth/verifyConfirmationCode', data);
         }
     }
 });

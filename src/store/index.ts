@@ -1,13 +1,13 @@
 import { defineStore } from "pinia";
-import type { Member } from "../types";
+import type { Member, UserData } from "../types";
 
 
 interface Store {
-    team: Member[]
+    team: Member[],
+    user: UserData
 }
 
 const images = ["/v/1/1.jpg","/v/1/2.jpg","/v/1/3.jpg","/v/1/4.jpg","/v/1/5.jpg",];
-const images2 = ["/v/1.jpg", "/v/2.jpg", "/v/3.jpg"];
 
 const useStore = defineStore("store", {
     state: (): Store => ({
@@ -45,7 +45,14 @@ const useStore = defineStore("store", {
 در حوزه دکوراسیون داخلی خانه یا محل کارتان را ایجاد می‌کنیم.`,
                 projects: [{name: 'project 1', images}, {name: 'project 2', images}, {name: 'project 3', images}]
             }
-        ]
+        ],
+        user: {
+            firstName: '',
+            lastName: '',
+            phoneNumber: '',
+            address: '',
+            emailAddress: ''
+        }
     })
 });
 

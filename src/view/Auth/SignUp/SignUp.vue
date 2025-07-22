@@ -20,7 +20,7 @@ const handleRegister = async () => {
   const response = await Api.Register(registerData);
 
   if (response.type == 'success') {
-    router.push('/login');
+    router.push('/auth/login');
   } else {
     alert("مشکلی پیش آمده لطفا دوباره امتحان کنید");
   }
