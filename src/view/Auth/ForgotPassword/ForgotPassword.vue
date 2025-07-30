@@ -11,11 +11,11 @@ const forgotPasswordData = reactive<ForgotPasswordData>({
 })
 
 async function handleForm() {
-    // const response = await Api.ForgotPassword(forgotPasswordData);
-    const response = {type: 'success'};
+    const response = await Api.ForgotPassword(forgotPasswordData);
+    // const response = {type: 'success'};
 
     if (response.type == 'success')
-        router.push('/auth/verifyConfirmationCode')
+        router.push('/auth/resetPassword')
     else
         alert("مشکلی پیش آمد لطفا دوباره امتحان کنید")
 }
