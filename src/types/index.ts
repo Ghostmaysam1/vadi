@@ -3,6 +3,10 @@ export type Project = {
     images: string[];
 }
 
+export type ValidationError = {
+  message: string
+}
+
 export type UserData = Omit<RegisterData, 'password' | 'confirmPassword'>;
 
 export type Member = {
