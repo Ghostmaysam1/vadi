@@ -1,24 +1,24 @@
 import { defineStore } from "pinia";
-import type { ApiResult, RegisterData, LoginData, ForgotPasswordData, VerifyConfirmationCodeData } from "../types";
-import VerifyConfirmationCode from "../view/Auth/VerifyConfirmationCode/VerifyConfirmationCode.vue";
+import type { ApiResult, RegisterData, LoginData, ForgotPasswordData, VerifyConfirmationCodeData, ResetPasswordData, AllowedDataTypes } from "../types";
 
 interface ApiStore {
-    api_link: `http://${string}/${string}`
+    api_link: `${'http' | 'https'}://${string}`
 }
 
 const sendRequest = Symbol("sendRequest");
 
 const useApi = defineStore("api", {
     state: (): ApiStore => ({
-        api_link: 'http://localhost:8000/',
+        api_link: 'http://localhost:8000/'
     }),
     actions: {
-        async [sendRequest](url: (`/auth/${string}` | `/coworker${string}`), data: (LoginData | RegisterData | ForgotPasswordData)) {
+        async [sendRequest](url: (`/auth/${string}` | `/coworker${string}`), data: AllowedDataTypes) {
             let response = await fetch(this.api_link + url,
                 {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer TOKEN`
                     },
                     body: JSON.stringify(data)
                 }
@@ -44,6 +44,9 @@ const useApi = defineStore("api", {
         },
         async VerifyConfirmationCode(data: VerifyConfirmationCodeData): Promise<ApiResult> {
             return await this[sendRequest]('/auth/verifyConfirmationCode', data);
+        },
+        async ResetPassword(data: ResetPasswordData): Promise<ApiResult> {
+            return await this[sendRequest]('/auth/resetPassword', data);
         }
     }
 });

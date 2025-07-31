@@ -5,6 +5,7 @@ import Login from "../view/Auth/Login/Login.vue";
 import SignUp from "../view/Auth/SignUp/SignUp.vue";
 import ForgotPassword from "../view/Auth/ForgotPassword/ForgotPassword.vue";
 import VerifyConfirmationCode from "../view/Auth/VerifyConfirmationCode/VerifyConfirmationCode.vue";
+import ResetPassword from "../view/Auth/ResetPassword/ResetPassword.vue";
 
 const router = createRouter({
     history: createWebHistory('/'),
@@ -42,6 +43,10 @@ const router = createRouter({
                 {
                     path: 'verifyConfirmationCode',
                     component: VerifyConfirmationCode
+                },
+                {
+                    path: 'resetPassword',
+                    component: ResetPassword
                 }
             ]
         },
