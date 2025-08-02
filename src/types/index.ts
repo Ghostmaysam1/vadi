@@ -4,7 +4,7 @@ export type Project = {
 }
 
 export type ValidationError = {
-  message: string
+  message: string;
 }
 
 export type UserData = Omit<RegisterData, 'password' | 'confirmPassword'>;
@@ -15,38 +15,38 @@ export type Member = {
     position: string;
     bio: string;
     image: string;
-    projects?: Project[]
+    projects?: Project[];
 }
 
 export type RegisterData = {
-    firstName: string,
-    lastName: string,
-    phoneNumber: string,
-    address?: string,
-    emailAddress?: string,
-    password: string,
-    confirmPassword: string
+    firstName: string;
+    lastName: string;
+    phoneNumber: string;
+    address?: string;
+    emailAddress?: string;
+    password: string;
+    confirmPassword: string;
 }
 
 export type LoginData = {
-  phoneNumber: string,
-  password: string
+  phoneNumber: string;
+  password: string;
 }
 
 export type ForgotPasswordData = {
-  phoneNumber: string,
+  phoneNumber: string;
 }
 
 export type VerifyConfirmationCodeData = {
-  phoneNumber: string,
-  token: string
+  phoneNumber: string;
+  token: string;
 }
 
 export type ResetPasswordData = {
-  phoneNumber: string,
-  token: string,
-  newPassword: string,
-  confirmNewPassword: string
+  phoneNumber: string;
+  token: string;
+  newPassword: string;
+  confirmNewPassword: string;
 }
 
 export type AllowedDataTypes = (LoginData | RegisterData | ForgotPasswordData | ForgotPasswordData | ResetPasswordData | VerifyConfirmationCodeData)
@@ -54,32 +54,52 @@ export type AllowedDataTypes = (LoginData | RegisterData | ForgotPasswordData | 
 export namespace ApiResponses {
   
   type ApiError = {
-    type: string,
-    title: string,
-    detail: string,
-    instance: string
+    type: string;
+    title: string;
+    detail: string;
+    instance: string;
   }
 
   interface Error401 extends ApiError {
-    status: 401
+    status: 401;
   }
 
   interface Error400 extends ApiError {
-    status: 400
+    status: 400;
   }
 
   interface Error404 extends ApiError {
-    status: 404
+    status: 404;
+  }
+
+  type UUID = `${string}-${string}-${string}-${string}-${string}`;
+  type DATE = `${number}-${string}-${string}T${string}:${string}:${string}Z`;
+
+  interface CowWorker {
+    id: UUID;
+    fullName: string;
+    phoneNumber: string;
+    profilePictureUrl: string;
+    projects: [
+      {
+        id: UUID;
+        title: string;
+        description: string;
+        imageLinks: string[];
+        startDate: DATE;
+        endDate: DATE;
+      }
+    ]
   }
 
   export interface ApiResponseMap {
-    '/auth/login': Error401,
-    '/auth/register': Error400,
-    '/auth/forgotPassword': Error401,
-    '/auth/resetPassword': Error400 | Error401,
-    '/auth/changePassword': Error400,
-    '/coworker': Error404,
-    '/coworker/': Error404
+    '/auth/login': Error401;
+    '/auth/register': Error400;
+    '/auth/forgotPassword': Error401;
+    '/auth/resetPassword': Error400 | Error401;
+    '/auth/changePassword': Error400;
+    '/coworker': Error404 | CowWorker[];
+    [key: `/coworker/${UUID}`]: Error404 | CowWorker;
   }
 }
 
