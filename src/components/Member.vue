@@ -36,7 +36,7 @@ watch(width, (w)=>{
           bio.value = sliceText(member.bio, 60)
         }
     } else {
-        bio.value = sliceText(member.bio, 50)
+        bio.value = sliceText(member.bio, 60)
     }
 }, {immediate: true})
 </script>
