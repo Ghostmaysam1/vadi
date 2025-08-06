@@ -14,7 +14,7 @@ const team = store.team;
 const config = reactive({
   height: 550,
   itemsToShow: 3,
-  gap: 32,
+  gap: 0,
   wrapAround: true,
   mouseWheel: true,
   transition: 500

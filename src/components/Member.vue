@@ -1,13 +1,16 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue';
 import type { Member } from '../types';
+import { useWindowSize } from '../utils/shared';
 
-defineProps<{
+const {member} = defineProps<{
   member: Member
 }>();
 
-function sliceText(txt: string): string {
+const {width} = useWindowSize();
+
+function sliceText(txt: string, finalLength: number): string {
   let arr = txt.split(' ');
-  let finalLength = 100;
 
   let arr2 = [];
   let length = 0;
@@ -22,10 +25,24 @@ function sliceText(txt: string): string {
   let text = arr2.join(' ');
   return text.length < finalLength ? text : text + '...';
 }
+
+const bio = ref(sliceText(member.bio, 100))
+
+watch(width, (w)=>{
+    if(w > 768) {
+        if(w > 1024) {
+          bio.value = sliceText(member.bio, 100)
+        }else {
+          bio.value = sliceText(member.bio, 60)
+        }
+    } else {
+        bio.value = sliceText(member.bio, 50)
+    }
+}, {immediate: true})
 </script>
 
 <template>
-  <div dir="rtl" class="group h-full min-w-[250px] px-4 pt-6">
+  <div dir="rtl" class="group h-full min-w-[250px] px-4 py-1">
     <div
       class="relative h-full rounded-2xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-[#87675a]/30">
       <div class="relative h-3/5 overflow-hidden">
@@ -40,9 +57,9 @@ function sliceText(txt: string): string {
           <p class="text-[#87675a] font-medium mb-4">{{ member.position }}</p>
         </div>
 
-        <p v-text="sliceText(member.bio)"></p>
+        <p v-text="bio"></p>
 
-        <div class="flex justify-end">
+        <div class="flex justify-end px-1 py-1">
 
           <router-link :to="`/team/${member.id}`"
             class="inline-block px-6 cursor-pointer py-2 bg-gradient-to-r from-[#526168] to-[#87675a] text-white rounded-full text-sm font-medium hover:shadow-lg transition-all">
