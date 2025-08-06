@@ -4,6 +4,24 @@ import type { Member } from '../types';
 defineProps<{
   member: Member
 }>();
+
+function sliceText(txt: string): string {
+  let arr = txt.split(' ');
+  let finalLength = 100;
+
+  let arr2 = [];
+  let length = 0;
+
+  for(let i=0;i<arr.length;i++) {
+    if(length + arr[i].length < finalLength) {
+      arr2.push(arr[i]);
+      length += arr[i].length
+    }
+  }
+
+  let text = arr2.join(' ');
+  return text.length < finalLength ? text : text + '...';
+}
 </script>
 
 <template>
@@ -22,7 +40,7 @@ defineProps<{
           <p class="text-[#87675a] font-medium mb-4">{{ member.position }}</p>
         </div>
 
-        <p>{{ member.bio.slice(0, member.bio.length / 2.5 + (Math.random() * 5)) + '...' }} </p>
+        <p v-text="sliceText(member.bio)"></p>
 
         <div class="flex justify-end">
 
