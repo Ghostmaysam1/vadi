@@ -1,4 +1,4 @@
-name: Deploy to Liara
+name: Manual Semantic Release on release commit
 
 on:
   push:
@@ -6,12 +6,20 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    if: contains(join(github.event.commits.*.message), 'release')
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -19,15 +27,9 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build project
-        run: npm run build
-
-      - name: Install Liara CLI
-        run: npm install -g @liara/cli
-
-      - name: Deploy to Liara
-        run: liara deploy --app="APP_NAME" --api-token="$LIARA_API_TOKEN" --path="./dist" --platform=static
+      - name: Run semantic-release
         env:
-          LIARA_API_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
